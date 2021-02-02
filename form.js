@@ -1,32 +1,40 @@
 class Form{
     constructor(){
-
+        this.title = createElement("h1")
+        this.inputbox = createInput("name")
+        this.button = createButton("Submit")
+        this.greeting = createElement("h3")
     }
     display(){
-        var title = createElement("h1")
-        title.html("Car racing game")
-        title.position(1100,400)
         
-        var inputbox = createInput("name")
-        inputbox.position(1100,600)
+        this.title.html("Car racing game")
+        this.title.position(1100,400)
+        
+         
+        this.inputbox.position(1100,600)
 
-        var button = createButton("Submit")
-        button.position(1100,900)
+        
+        this.button.position(1100,900)
 
-        var greeting = createElement("h3")
+       
 
-        button.mousePressed(function(){
-            button.hide()
-            inputbox.hide()
-            title.hide()
+        this.button.mousePressed(()=>{
+            this.button.hide()
+            this.inputbox.hide()
+            this.title.hide()
             playerCount = playerCount + 1;
-            var name = inputbox.value()
+            player.index = playerCount
+            player.name = this.inputbox.value()
 
             player.updatePlayerCount(playerCount)
-            player.updatePlayerName(name) 
+            player.updatePlayerInfo(); 
 
-            greeting.html("Hi " + name + " please wait for other players")
-            greeting.position(1100,600)
+            this.greeting.html("Hi " + player.name + " please wait for other players")
+            this.greeting.position(1100,600)
         })
+
+    }
+    Hide(){
+        this.greeting.hide()
     }
 }
