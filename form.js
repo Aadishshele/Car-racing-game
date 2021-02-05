@@ -8,13 +8,13 @@ class Form{
     display(){
         
         this.title.html("Car racing game")
-        this.title.position(1100,400)
+        this.title.position(displayWidth-1000,displayHeight-900)
         
          
-        this.inputbox.position(1100,600)
+        this.inputbox.position(displayWidth-1000,displayHeight-600)
 
         
-        this.button.position(1100,900)
+        this.button.position(displayWidth-900,displayHeight-400)
 
        
 
@@ -30,7 +30,7 @@ class Form{
             player.updatePlayerInfo(); 
 
             this.greeting.html("Hi " + player.name + " please wait for other players")
-            this.greeting.position(1100,600)
+            this.greeting.position(displayWidth-500,displayHeight-500)
         })
 
     }
