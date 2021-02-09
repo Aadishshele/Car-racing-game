@@ -24,13 +24,16 @@ class Game{
         }
         Car1 = createSprite(500,500,50,50)
         Car2 = createSprite(400,400,50,50)
+        Car1.addImage("car1img",car1img)
+        Car2.addImage("car2img",car2img)
         carsArray = [Car1,Car2]
     }
     playGame(){
+        background(ground)
         form.Hide()
         Player.getAllPlayerInfo();
         if(Allplayers !== undefined){
-            var y = 100
+            var y = 300
             var x = 500
             var index = 0
             for(var PLR in Allplayers){
@@ -45,7 +48,7 @@ class Game{
             */
 
                 carsArray[index].x = x
-                carsArray[index].y = displayHeight-Allplayers[PLR].playerDistance
+                carsArray[index].y = displayHeight-Allplayers[PLR].playerDistance-30
                 if(PLR === "player" + player.index){
                     carsArray[index].shapeColor = "red";
                     camera.position.x = displayWidth/2
@@ -55,8 +58,11 @@ class Game{
                     carsArray[index].shapeColor = "black"
                 }
                 index = index + 1
-                x = x + 100
-
+                x = x + 800
+                if(player.distance === 4990){
+                    gameState = 2
+                }
+                image(track,0,-displayHeight*3.9,displayWidth,displayHeight*5)
                 drawSprites();
            }
         }
@@ -64,5 +70,9 @@ class Game{
             player.distance = player.distance+10
             player.updatePlayerInfo()
         }
+    }
+    endGame(){
+        console.log("Game Over")
+        game.updateGameState(2);
     }
 }
