@@ -9,7 +9,10 @@ var Car1;
 var car1img;
 var car2img;
 var Car2;
+var arrow;
 var track;
+var Sound;
+var formbg;
 
 var ground;
 carsArray = []
@@ -19,6 +22,8 @@ function preload(){
     car2img = loadImage("images/car2.png")
     track = loadImage("images/track.jpg")
     ground = loadImage("images/ground.png")
+    Sound = loadSound("Sounds/formula+1.mp3")
+    formbg = loadImage("images/Formbg.jpg")
 }
 function setup(){
     createCanvas(displayWidth,displayHeight)
