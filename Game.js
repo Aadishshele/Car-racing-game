@@ -24,9 +24,11 @@ class Game{
         }
         Car1 = createSprite(500,500,50,50)
         Car2 = createSprite(400,400,50,50)
-        arrow = createSprite(500,500,50,50)
+        arrow = createSprite(450,500,50,50)
         Car1.addImage("car1img",car1img)
         Car2.addImage("car2img",car2img)
+        arrow.addImage("arrowimg",arrowimg)
+        arrow.scale=0.1
         carsArray = [Car1,Car2]
     }
     playGame(){
@@ -54,7 +56,7 @@ class Game{
                     carsArray[index].shapeColor = "red";
                     camera.position.x = displayWidth/2
                     camera.position.y = carsArray[index].y
-                    arrow.y = carsArray[index].y
+                    arrow.y = carsArray[index].y+90
                     arrow.x = x
                 }
                 else{
@@ -72,7 +74,7 @@ class Game{
         if(keyIsDown(UP_ARROW) && player.index !== 0 && player.distance <= 4990){
             player.distance = player.distance+10
             player.updatePlayerInfo()
-            Sound.play()
+            //Sound.play()
         }
     }
     endGame(){

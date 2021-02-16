@@ -10,6 +10,7 @@ var car1img;
 var car2img;
 var Car2;
 var arrow;
+var arrowimg;
 var track;
 var Sound;
 var formbg;
@@ -22,7 +23,8 @@ function preload(){
     car2img = loadImage("images/car2.png")
     track = loadImage("images/track.jpg")
     ground = loadImage("images/ground.png")
-    Sound = loadSound("Sounds/formula+1.mp3")
+    arrowimg = loadImage("images/arrow1b.png")
+    //Sound = loadSound("Sounds/formula+1.mp3")
     formbg = loadImage("images/Formbg.jpg")
 }
 function setup(){
