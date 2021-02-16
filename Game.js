@@ -34,6 +34,7 @@ class Game{
     playGame(){
         background(ground)
         form.Hide()
+        player.getCarsFinished()
         Player.getAllPlayerInfo();
         if(Allplayers !== undefined){
             var y = 300
@@ -66,12 +67,16 @@ class Game{
                 x = x + 800
                 if(player.distance === 4990){
                     gameState = 2
+                    player.rank = player.rank+1
+                    Player.updateCarsFinished(player.rank)
+                    console.log(player.rank)
+                    console.log("Aadish")
                 }
                 image(track,0,-displayHeight*3.9,displayWidth,displayHeight*5)
                 drawSprites();
            }
         }
-        if(keyIsDown(UP_ARROW) && player.index !== 0 && player.distance <= 4990){
+        if(keyIsDown(UP_ARROW) && player.index !== 0 && player.distance <= 5000){
             player.distance = player.distance+10
             player.updatePlayerInfo()
             //Sound.play()
@@ -80,5 +85,6 @@ class Game{
     endGame(){
         console.log("Game Over")
         game.updateGameState(2);
+        console.log(player.rank)
     }
 }

@@ -47,6 +47,7 @@ class Form{
         this.reset.mousePressed(()=>{
             player.updatePlayerCount(0)
             game.updateGameState(0)
+            Player.updateCarsFinished(0)
             var Plr = database.ref("players")
             Plr.remove();
         })
